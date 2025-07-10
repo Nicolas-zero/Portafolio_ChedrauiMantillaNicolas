@@ -1,0 +1,278 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0f1c;
+  color: white;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #001f4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bfff;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  background: linear-gradient(to right, #001f4d, #003366);
+  text-align: center;
+  padding: 6rem 2rem;
+  margin-top: 70px;
+  box-shadow: 0 0 20px #00bfff44;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ---------------- SECCIONES ---------------- */
+.seccion {
+  scroll-margin-top: 100px; /* Ajusta según la altura de tu navbar */
+  padding: 4rem 2rem;
+  background-color: #0e1a2b;
+}
+
+.seccion {
+  scroll-margin-top: 100px;
+  margin-top: 60px; /* Espacio visual entre secciones */
+  padding: 4rem 2rem;
+  background-color: #0e1a2b;
+}
+
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  color: #00bfff;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #00bfff;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.5rem;
+}
+
+.contenido-temporal {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ---------------- SERVICIOS ---------------- */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #001f4d;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #00bfff88;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #003366;
+}
+
+.card.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.card.servicio img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 4px #00bfff);
+}
+
+
+
+/* === PROYECTOS === */
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.proyecto-card {
+  background-color: #001f3f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00bfff66;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00bfff;
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proyecto-info {
+  padding: 1rem;
+  color: white;
+  background-color: #011d3a;
+}
+
+.proyecto-info h3 {
+  color: #00bfff;
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+/* ---------------- CONTACTO ---------------- */
+.contacto-iconos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.contacto-item img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 5px #00bfff);
+}
+
+.contacto-item a {
+  color: #00bfff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contacto-item a:hover {
+  color: #66d9ff;
+}
+
+/* === ANIMACIÓN: Hero entra con fade-up === */
+.hero {
+  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === ANIMACIÓN: Servicios aparecen con zoom-in === */
+.card.servicio {
+  animation: zoomIn 0.8s ease forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === ANIMACIÓN: Efecto de resplandor al pasar el mouse === */
+.card:hover {
+  box-shadow: 0 0 25px #00bfff;
+}
+
+/* === ANIMACIÓN: Habilidades aparecen con retraso escalonado === */
+.habilidad {
+  animation: fadeInScale 0.5s ease forwards;
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === ANIMACIÓN: Sección de contacto entra deslizándose === */
+.contacto-iconos {
+  animation: slideInContact 1s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+@keyframes slideInContact {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
